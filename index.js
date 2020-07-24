@@ -40,6 +40,7 @@ function init() {
     for (const property in answers) {
       console.log(answers[property]);
       switch (property) {
+        /**********Add title**********/
         case 'Title':
           fs.appendFile(
             'README.md',
@@ -47,6 +48,9 @@ function init() {
             (error) => error && console.log(error)
           );
           break;
+
+        /**********Add table content**********/
+
         case 'TableContent':
           //Only generate table content if user confirmed
           answers[property] &&
@@ -56,6 +60,9 @@ function init() {
               (error) => error && console.log(error)
             );
           break;
+
+        /**********Add license**********/
+
         case 'License':
           const fd = fs.openSync('README.md', 'w+');
           let badge;
@@ -94,6 +101,8 @@ function init() {
             (error) => error && console.log(error)
           );
           break;
+
+        /**********Add Questions**********/
         case 'Username':
           fs.appendFile(
             'README.md',
@@ -108,6 +117,8 @@ function init() {
             (error) => error && console.log(error)
           );
           break;
+
+        /**********Add Installation, Usage, Credit, Contribute, Test**********/
         default:
           fs.appendFile(
             'README.md',
