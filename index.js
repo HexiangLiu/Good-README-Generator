@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 // array of questions for user
 const questions = [
   { name: 'Title', message: 'Project Title:' },
-  { name: 'description', message: 'Description:' },
+  { name: 'Description', message: 'Description:' },
   {
     type: 'confirm',
     name: 'TableContent',
@@ -97,14 +97,14 @@ function init() {
         case 'Username':
           fs.appendFile(
             'README.md',
-            `## Questions \n [My Github!](https://github.com/${answers[property]}) \n`,
+            `## Questions \n [My Github!](https://github.com/${answers[property]}) <br>`,
             (error) => error && console.log(error)
           );
           break;
         case 'Email':
           fs.appendFile(
             'README.md',
-            `${answers[property]}) \n Contact me through email if any questions`,
+            `${answers[property]}  Contact me through email if any questions`,
             (error) => error && console.log(error)
           );
           break;
